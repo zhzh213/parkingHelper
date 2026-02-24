@@ -1,0 +1,7 @@
+{
+  "name": "停车提醒小助手",
+  "description": "在商场停车时，提前提醒缴费，并保存缴费二维码，避免超时多交停车费。",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
