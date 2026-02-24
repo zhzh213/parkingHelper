@@ -6,7 +6,7 @@ import { useAppContext } from '../context/AppContext';
 export const Layout = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { refreshLocation, setSession } = useAppContext();
+  const { refreshLocation, setSession, session } = useAppContext();
 
   const isHome = location.pathname === '/';
   const title = location.pathname === '/settings' ? '设置' :
@@ -35,9 +35,11 @@ export const Layout = () => {
         
         {isHome ? (
           <div className="flex items-center space-x-2">
-            <button onClick={handleReset} className="p-2 text-gray-600">
-              <RefreshCw size={24} />
-            </button>
+            {session && (
+              <button onClick={handleReset} className="p-2 text-gray-600">
+                <RefreshCw size={24} />
+              </button>
+            )}
             <button onClick={() => navigate('/settings')} className="p-2 text-gray-600">
               <Settings size={24} />
             </button>

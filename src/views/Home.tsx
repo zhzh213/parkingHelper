@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAppContext } from '../context/AppContext';
 import { getDistance, formatDuration } from '../utils';
 import { Image as ImageIcon } from 'lucide-react';
+import { LongPressButton } from '../components/LongPressButton';
 
 export const Home = () => {
   const { districts, settings, session, setSession, currentLocation } = useAppContext();
@@ -82,8 +83,8 @@ export const Home = () => {
     return (
       <div className="flex flex-col items-center p-6 space-y-8">
         <div className="flex justify-center w-full mt-8">
-          <button 
-            onClick={isCheckedOut ? handleExit : handleCheckout}
+          <LongPressButton 
+            onComplete={isCheckedOut ? handleExit : handleCheckout}
             className="w-48 h-48 rounded-full border border-gray-300 flex flex-col items-center justify-center bg-white shadow-sm active:bg-gray-50 transition-colors"
           >
             <span className="text-2xl font-bold text-gray-800 mb-1">
@@ -95,7 +96,7 @@ export const Home = () => {
             <span className="text-lg font-mono text-gray-700">
               {formatDuration(parkedTime)}
             </span>
-          </button>
+          </LongPressButton>
         </div>
 
         <div className="w-full border border-gray-200 p-4 bg-white shadow-sm">
@@ -136,13 +137,13 @@ export const Home = () => {
   return (
     <div className="flex flex-col items-center p-6">
       <div className="flex justify-center w-full mt-8 mb-6">
-        <button 
-          onClick={handleEnter}
+        <LongPressButton 
+          onComplete={handleEnter}
           className="w-48 h-48 rounded-full border border-gray-300 flex flex-col items-center justify-center bg-white shadow-sm active:bg-gray-50 transition-colors"
         >
           <span className="text-sm text-gray-500 mb-2">{selectedDistrict?.name || '选择商圈'}</span>
           <span className="text-4xl font-bold text-gray-800">入场</span>
-        </button>
+        </LongPressButton>
       </div>
 
       <div className="text-xs text-gray-500 mb-6 text-center">
