@@ -11,7 +11,7 @@ export const LongPressButton: React.FC<LongPressButtonProps> = ({
   onComplete, 
   children, 
   className = '',
-  duration = 2000
+  duration = 1300
 }) => {
   const [isPressing, setIsPressing] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -77,10 +77,10 @@ export const LongPressButton: React.FC<LongPressButtonProps> = ({
       onContextMenu={(e) => e.preventDefault()}
     >
       <div 
-        className="absolute top-0 left-0 h-full bg-gradient-to-r from-sky-400 to-sky-500 pointer-events-none"
+        className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-sky-400 to-sky-500 pointer-events-none"
         style={{ 
-          width: `${progress}%`,
-          transition: isPressing ? 'none' : 'width 0.3s ease-out',
+          height: `${progress}%`,
+          transition: isPressing ? 'none' : 'height 0.3s ease-out',
           opacity: 0.8
         }}
       />

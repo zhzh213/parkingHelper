@@ -4,20 +4,20 @@ import { District, Settings, ParkingSession } from '../types';
 const defaultDistricts: District[] = [
   {
     id: '1',
-    name: '中南医院',
+    name: '长江证券停车场',
     lat: 30.555,
     lng: 114.333,
     needsOperation: true,
     freeDuration: 2,
     exitDuration: 30,
-    paymentAccount: '武汉大学中南医院',
+    paymentAccount: '长江证券停车场',
     qrCode: ''
   },
   {
     id: '2',
     name: 'SKP',
-    lat: 30.550,
-    lng: 114.330,
+    lat: 1.55000,
+    lng: 55.33000,
     needsOperation: true,
     freeDuration: 2,
     exitDuration: 15,
