@@ -18,3 +18,7 @@ View your app in AI Studio: https://ai.studio/apps/e0459921-b1ab-4552-b154-d1a11
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+这是一个gemini生成的程序，用于记录停车时长。纯网页版APP。
+https://parking-helper.netlify.app/
+这里可以直接用
